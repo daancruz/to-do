@@ -1,0 +1,19 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  padding: 16px 0;
+}
+
+header img {
+  width: 60px;
+  margin-right: 16px;
+}
+
+header h1 {
+  text-transform: uppercase;
+  /* text-align: center; */
+  /* height: 50px; */
+  /* border-bottom: 1px solid var(--custom-color-gray); */
+}

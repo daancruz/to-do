@@ -1,0 +1,88 @@
+@import url('./assets/styles/button.css');
+@import url('./components/Card/Card.css');
+@import url('./components/Header/Header.css');
+@import url('./components/Footer/Footer.css');
+
+
+:root {
+
+  --font-montserrat: "Montserrat", sans-serif;
+  --custom-color-danger: #cc3917;
+  --custom-color-success: #8fa691;
+  --custom-color-dark: #3d3d3c;
+  --custom-color-white: #fdfdfd;
+  --custom-color-gray: #cdcdcd;
+  --custom-color-violet: #9eaee6;
+
+}
+
+body {
+  font-family: var(--font-montserrat);
+  color: var(--custom-color-dark);
+  background-color: var(--custom-color-white);
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.row {
+  padding: 0 36px;
+  min-height: calc(100vh - 190px);
+  margin: 0;
+  background-image: url('../public/assets/img/bg-2-do.svg');
+}
+
+textarea {
+  padding-left: 8px;
+}
+
+input, textarea {
+  margin-right: 8px;
+  outline: none;
+  border: 1px solid var(--custom-color-gray);
+  border-radius: 5px;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.row .task-column:nth-child(2) h3,
+.row .task-column:nth-child(3) h3 {
+  margin-bottom: 100px;
+}
+
+.task-column .content {
+  background-color: var(--custom-color-white);
+  padding: 16px;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+.task-column .content .input {
+  display: flex;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.task-column .content .input input {
+  width: 100%;
+  padding-left: 16px;
+}
+
+.task-column .content h3 {
+  margin-bottom: 32px;
+  text-align: start;
+}
+
+.modal-header img {
+  width: 48px;
+  margin-right: 16px;
+}

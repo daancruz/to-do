@@ -1,0 +1,13 @@
+footer {
+    line-height: 50px;
+    text-align: center;
+    height: 50px;
+    background-color: var(--custom-bg-primary);
+    margin-top: 16px;
+}
+
+footer a, b {
+    text-decoration: none;
+    color: var(--custom-color-violet);
+    font-weight: 600;
+}
