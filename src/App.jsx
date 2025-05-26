@@ -101,7 +101,7 @@ function App() {
             <div className="modal-content">
               <div className="modal-header bg-warning">
                 <h1 className="modal-title fs-5 ms-auto">
-                  <img src="../public/assets/img/atencao.png" alt="icone de atenção" />
+                  <img src="/assets/img/atencao.png" alt="icone de atenção" />
                   EI, PSIU</h1>
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={() => setTaskToDelete(null)}></button>
               </div>
