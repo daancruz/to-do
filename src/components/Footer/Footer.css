@@ -1,8 +1,7 @@
 footer {
-    line-height: 50px;
+    display: flex;
     text-align: center;
-    height: 50px;
-    background-color: var(--custom-bg-primary);
+    justify-content: center;
     margin-top: 16px;
 }
 

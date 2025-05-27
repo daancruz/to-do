@@ -51,7 +51,7 @@ function App() {
     <>
       <Header />
       <main className='row'>
-        <div className="task-column col-12 col-md-4">
+        <div className="task-column col-12 col-md-4 mb-3 mb-md-0">
           <div className='content'>
             <h3>Tarefas</h3>
             <div className='input'>
@@ -72,7 +72,7 @@ function App() {
           </div>
 
         </div>
-        <div className="task-column col-12 col-md-4">
+        <div className="task-column col-12 col-md-4 mb-3 mb-md-0">
           <div className='content'>
             <h3>Andamento</h3>
 
@@ -84,7 +84,7 @@ function App() {
             />
           </div>
         </div>
-        <div className="task-column col-12 col-md-4">
+        <div className="task-column col-12 col-md-4 mb-3 mb-md-0">
           <div className='content'>
             <h3>Concluída</h3>
             <Card
