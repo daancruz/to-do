@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+
 const Card = ({ tasks, setTasks, allTasks, onDeleteClick }) => {
     
     const addContent = (id, newContent) => {
@@ -28,6 +30,18 @@ const Card = ({ tasks, setTasks, allTasks, onDeleteClick }) => {
         setTasks(updateTasks);
     };
 
+    const textareaRefs = useRef({});
+    useEffect(() => {
+        tasks.forEach(task => {
+            const textarea = textareaRefs.current[task.id];
+
+            if(textarea) {
+                textarea.style.height =  'auto';
+                textarea.style.height = `${textarea.scrollHeight}px`;
+            }
+        })
+    },[tasks]);
+
     return (
         <>
             <ul>
@@ -43,6 +57,8 @@ const Card = ({ tasks, setTasks, allTasks, onDeleteClick }) => {
                                 }
                             </div>
                             <textarea
+                                ref={(el) => (textareaRefs.current[task.id] = el)}
+                                disabled={task.progress === 'done'}
                                 value={task.content}
                                 onChange={(e) => addContent(task.id, e.target.value)}
                             />
@@ -66,7 +82,7 @@ const Card = ({ tasks, setTasks, allTasks, onDeleteClick }) => {
                                 <span>Concluído</span>
                             </label>
                             <button className='btn btn-danger' onClick={() => onDeleteClick(task.id)}>
-                                    Apagar
+                                    <i class="fa-solid fa-trash"></i>
                             </button>
                         </li>
                     ))

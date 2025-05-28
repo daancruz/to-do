@@ -57,7 +57,10 @@ function App() {
       <main className='row'>
         <div className="task-column col-12 col-md-4 mb-3 mb-md-0">
           <div className='content'>
-            <h3>Tarefas</h3>
+            <div className="title">
+              <img src="./assets/img/task-list.png" alt="Lista de tarefas" />
+              <h3>Tarefas</h3>
+            </div>
             <div className='input'>
               <input
                 type="text"
@@ -68,10 +71,10 @@ function App() {
               <button className='btn btn-success' onClick={addTask}> <i className="fa-solid fa-plus"></i></button>
             </div>
             <div className='priority'>
-                <button className="badge normal-priority" onClick={(e) => setPriority('normal')}>normal</button>
-                <button className="badge mx-1 important-priority" onClick={(e) => setPriority('important')}>média</button>
-                <button className="badge urgent-priority" onClick={(e) => setPriority('urgent')}>alta</button>
-              </div>
+              <button className={`badge normal-priority ${priority === 'normal' ? 'active' : ''}`} onClick={(e) => setPriority('normal')}>normal</button>
+              <button className={`badge important-priority mx-1 ${priority === 'important' ? 'active' : ''}`} onClick={(e) => setPriority('important')}>média</button>
+              <button className={`badge urgent-priority ${priority === 'urgent' ? 'active' : ''}`} onClick={(e) => setPriority('urgent')}>alta</button>
+            </div>
             <Card
               tasks={todoTasks}
               setTasks={setTasks}
@@ -83,8 +86,10 @@ function App() {
         </div>
         <div className="task-column col-12 col-md-4 mb-3 mb-md-0">
           <div className='content'>
-            <h3>Andamento</h3>
-
+            <div className="title">
+              <img src="./assets/img/task-running.png" alt="Tarefas em andamento" />
+              <h3>Andamento</h3>
+            </div>
             <Card
               tasks={runningTasks}
               setTasks={setTasks}
@@ -95,7 +100,10 @@ function App() {
         </div>
         <div className="task-column col-12 col-md-4 mb-3 mb-md-0">
           <div className='content'>
-            <h3>Concluída</h3>
+            <div className="title">
+              <img src="./to-do/assets/img/task-done.png" alt="Tarefas finalizadas" />
+              <h3>Concluída</h3>
+            </div>
             <Card
               tasks={doneTasks}
               setTasks={setTasks}
@@ -105,33 +113,33 @@ function App() {
           </div>
         </div>
         {taskToDelete !== null && (
-        <div className="modal fade show" id={`deleteModal${taskToDelete}`} style={{ display: 'block' }}>
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header bg-warning">
-                <h1 className="modal-title fs-5 ms-auto">
-                  <img src="./assets/img/atencao.png" alt="icone de atenção" />
-                  EI, PSIU</h1>
-                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={() => setTaskToDelete(null)}></button>
-              </div>
-              <div className="modal-body">
-                <p>Você deseja apagar essa tarefa? Você não poderá reverter esta ação.</p>
-                <p>Se desejar voltar, basta me fechar no "x"</p>
-                
-              </div>
-              <div className="modal-footer">
-                <button type="button" className="btn btn-danger" onClick={() => removeTask(taskToDelete)} data-bs-dismiss="modal">
-                  Apagar
-                </button>
+          <div className="modal fade show" id={`deleteModal${taskToDelete}`} style={{ display: 'block' }}>
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header bg-warning">
+                  <h1 className="modal-title fs-5 ms-auto">
+                    <img src="./assets/img/atencao.png" alt="icone de atenção" />
+                    EI, PSIU</h1>
+                  <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={() => setTaskToDelete(null)}></button>
+                </div>
+                <div className="modal-body">
+                  <p>Você deseja apagar essa tarefa? Você não poderá reverter esta ação.</p>
+                  <p>Se desejar voltar, basta me fechar no "x"</p>
+
+                </div>
+                <div className="modal-footer">
+                  <button type="button" className="btn btn-danger" onClick={() => removeTask(taskToDelete)} data-bs-dismiss="modal">
+                    Apagar
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {taskToDelete !== null && (
-        <div className="backdrop"></div>
-      )}
+        {taskToDelete !== null && (
+          <div className="backdrop"></div>
+        )}
       </main>
       <Footer />
     </>

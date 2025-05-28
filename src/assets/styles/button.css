@@ -15,10 +15,42 @@ input[type="checkbox"]:checked {
 }
 
 .btn.btn-danger {
-    background-color: var(--custom-color-dark);
+    background-color: var(--custom-color-danger);
     margin: 0 auto;
+    color: var(--custom-color-white);
+}
+
+.task-card button {
+    background-color: transparent !important;
+    color: var(--custom-color-danger) !important;
+    margin: 0 auto;
+    transition: .3s;
+}
+
+.task-card button:hover {
+    color: var(--custom-color-white) !important;
+    background-color: var(--custom-color-danger) !important;
+    transition: .3s;
 }
 
 .btn.btn-success {
-    background-color: var(--custom-color-violet);
+    background-color: var(--custom-color-success);
+}
+
+.badge {
+    width: 20%;
+    min-width: 55px;
+    max-width: 100px;
+    font-weight: 300;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 8px;
+    border-radius: 5px;
+    margin-left: 0 auto;
+    border: none;
+}
+
+.badge.active {
+    filter: brightness(1.1);
+    border: 1px solid var(--custom-color-dark);
 }
