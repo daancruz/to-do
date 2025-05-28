@@ -8,6 +8,7 @@ import Header from './components/Header/Header';
 function App() {
   const [newtask, setNewtask] = useState('');
   const [tasks, setTasks] = useState([]);
+  const [priority, setPriority] = useState('normal');
 
   const todoTasks = tasks.filter(task => task.progress === '');
   const runningTasks = tasks.filter(task => task.progress === 'running');
@@ -41,10 +42,13 @@ function App() {
       task: newtask,
       content: '',
       progress: '',
+      priority: priority,
+      createdAt: new Date().toLocaleString(),
     };
 
     setTasks([...tasks, task])
     setNewtask('');
+    setPriority('normal');
   }
 
   return (
@@ -63,6 +67,11 @@ function App() {
               />
               <button className='btn btn-success' onClick={addTask}> <i className="fa-solid fa-plus"></i></button>
             </div>
+            <div className='priority'>
+                <button className="badge normal-priority" onClick={(e) => setPriority('normal')}>normal</button>
+                <button className="badge mx-1 important-priority" onClick={(e) => setPriority('important')}>média</button>
+                <button className="badge urgent-priority" onClick={(e) => setPriority('urgent')}>alta</button>
+              </div>
             <Card
               tasks={todoTasks}
               setTasks={setTasks}

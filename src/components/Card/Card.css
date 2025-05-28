@@ -9,6 +9,18 @@ ul, li {
     padding: 0;
 }
 
+.task-card .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+
+.task-card .header p {
+    word-break: break-word;
+    width: 75%;
+    font-weight: 600;
+}
+
 .task-card label:nth-of-type(1) {
     margin-top: 16px;
 }

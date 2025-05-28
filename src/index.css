@@ -8,6 +8,7 @@
 
   --font-montserrat: "Montserrat", sans-serif;
   --custom-color-danger: #cc3917;
+  --custom-color-caution: #ffc108;
   --custom-color-success: #8fa691;
   --custom-color-dark: #3d3d3c;
   --custom-color-white: #fdfdfd;
@@ -69,7 +70,7 @@ input, textarea {
 .task-column .content .input {
   display: flex;
   width: 100%;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .task-column .content .input input {
@@ -85,4 +86,41 @@ input, textarea {
 .modal-header img {
   width: 48px;
   margin-right: 16px;
+}
+
+.urgent-priority {
+  background-color: var(--custom-color-danger);
+  color: var(--custom-color-white);
+}
+
+.important-priority {
+  background-color: var(--custom-color-caution);
+  color: var(--custom-color-dark);
+}
+
+.normal-priority {
+  background-color: var(--custom-color-success);
+  color: var(--custom-color-white);
+}
+
+.task-column .priority {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.badge {
+  width: 20%;
+  min-width: 55px;
+  max-width: 100px;
+  font-weight: 300;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 8px;
+  border-radius: 5px;
+  margin-left: 0 auto;
+  border: none;
+}
+
+.badge.active {
+  filter: brightness(1.1);
 }

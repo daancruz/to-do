@@ -34,7 +34,14 @@ const Card = ({ tasks, setTasks, allTasks, onDeleteClick }) => {
                 {
                     tasks.map((task) => (
                         <li className="task-card" key={task.id}>
-                            <p>{task.task}</p>
+                            <div className="header">
+                                <p>{task.task}</p>
+                                { 
+                                    task.priority === 'normal' ? (<span className="badge normal-priority">normal</span>)
+                                    : task.priority === 'important' ? (<span className="badge important-priority">média</span>)
+                                    : (<span className="badge urgent-priority">alta</span>)
+                                }
+                            </div>
                             <textarea
                                 value={task.content}
                                 onChange={(e) => addContent(task.id, e.target.value)}
